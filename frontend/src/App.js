@@ -13,11 +13,11 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/home" element={<HomePage />} />
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/product-details" element={<ProductDetailsPage />} />
-        <Route path="/product-list" element={<ProductListPage />} />
-        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/cart/:id" element={<CartPage />} />
+        <Route path="/login/:id" element={<LoginPage />} />
+        <Route path="/product-details/:id" element={<ProductDetailsPage />} />
+        <Route path="/product-list/:id" element={<ProductListPage />} />
+        <Route path="/register/:id" element={<RegisterPage />} />
       </Routes>
     </BrowserRouter>
 
