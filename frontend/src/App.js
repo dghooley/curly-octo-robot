@@ -1,11 +1,16 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+
+// components:
+
+// publicly available pages:
 import HomePage from "./pages/HomePage";
-import CartPage from "./pages/CartPage";
-import LoginPage from "./pages/LoginPage";
-import ProtectedRoutesComponent from "./components/ProtectedRoutesComponent";
 import ProductDetailsPage from "./pages/ProductDetails";
 import ProductListPage from "./pages/ProductListPage";
+import CartPage from "./pages/CartPage";
+import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
+
+import ProtectedRoutesComponent from "./components/ProtectedRoutesComponent";
 
 // protected user pages: 
 import UserProfilePage from "./pages/user/UserProfilePage";
@@ -26,17 +31,15 @@ import AdminAnalyticsPage from "./pages/admin/AdminAnalyticsPage";
 
 function App() {
   return (
-
     <BrowserRouter>
       <Routes>
-
-
+        {/* publicly available routes */}
         <Route path="/" element={<HomePage />} />
+        <Route path="/product-list" element={<ProductListPage />} />
+        <Route path="/product-details" element={<ProductDetailsPage />} />
+        <Route path="/product-details/:id" element={<ProductDetailsPage />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/product-details/:id" element={<ProductDetailsPage />} />
-        <Route path="/product-details" element={<ProductDetailsPage />} />
-        <Route path="/product-list" element={<ProductListPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="*" element="Page does not exist" />
 
@@ -64,7 +67,6 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
-
   );
 }
 
