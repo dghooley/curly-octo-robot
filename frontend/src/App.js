@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 // components:
+import HeaderComponent from "./components/components/HeaderComponent";
+import FooterComponent from "./components/components/FooterComponent";
 
 // publicly available pages:
 import HomePage from "./pages/HomePage";
@@ -32,6 +34,7 @@ import AdminAnalyticsPage from "./pages/admin/AdminAnalyticsPage";
 function App() {
   return (
     <BrowserRouter>
+      <HeaderComponent />
       <Routes>
         {/* publicly available routes */}
         <Route path="/" element={<HomePage />} />
@@ -66,6 +69,7 @@ function App() {
           <Route path="/admin/analytics" element={<AdminAnalyticsPage />} />
         </Route>
       </Routes>
+      <FooterComponent />
     </BrowserRouter>
   );
 }
