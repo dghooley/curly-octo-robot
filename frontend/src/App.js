@@ -1,8 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
+
 // components:
 import HeaderComponent from "./components/components/HeaderComponent";
 import FooterComponent from "./components/components/FooterComponent";
+
+// user components:
+import UserChatComponent from "./components/user/UserChatComponent";
+import RoutesWithUserChatComponent from "./pages/user/RoutesWithUserChatComponent";
+
 
 // publicly available pages:
 import HomePage from "./pages/HomePage";
@@ -36,6 +42,9 @@ function App() {
     <BrowserRouter>
       <HeaderComponent />
       <Routes>
+        <Route element={<RoutesWithUserChatComponent />}>
+
+        </Route>
         {/* publicly available routes */}
         <Route path="/" element={<HomePage />} />
         <Route path="/product-list" element={<ProductListPage />} />
