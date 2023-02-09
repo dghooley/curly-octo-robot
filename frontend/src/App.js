@@ -2,17 +2,17 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 
 // components:
-import HeaderComponent from "./components/components/HeaderComponent";
-import FooterComponent from "./components/components/FooterComponent";
+import HeaderComponent from "./components/HeaderComponent";
+import FooterComponent from "./components/FooterComponent";
 
 // user components:
-import UserChatComponent from "./components/user/UserChatComponent";
-import RoutesWithUserChatComponent from "./pages/user/RoutesWithUserChatComponent";
+
+import RoutesWithUserChatComponent from "./components/user/RoutesWithUserChatComponent";
 
 
 // publicly available pages:
 import HomePage from "./pages/HomePage";
-import ProductDetailsPage from "./pages/ProductDetails";
+import ProductDetailsPage from "./pages/ProductDetails"
 import ProductListPage from "./pages/ProductListPage";
 import CartPage from "./pages/CartPage";
 import LoginPage from "./pages/LoginPage";
@@ -43,27 +43,28 @@ function App() {
       <HeaderComponent />
       <Routes>
         <Route element={<RoutesWithUserChatComponent />}>
+          {/* publicly available routes */}
+          <Route path="/" element={<HomePage />} />
+          <Route path="/product-list" element={<ProductListPage />} />
+          <Route path="/product-details" element={<ProductDetailsPage />} />
+          <Route path="/product-details/:id" element={<ProductDetailsPage />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="*" element="Page does not exist" />
 
+          {/*  <Route path="/" component{HomePage} /> in previous versions of react-router-dom */}
+
+          {/* user protected routes: */}
+          <Route element-={< ProtectedRoutesComponent admin={false} />}>
+            <Route path="/user" element={<UserProfilePage />} />
+            <Route path="/user/my-orders" element={<UserOrdersPage />} />
+            <Route path="/user/cart-details" element={<UserCartDetailsPage />} />
+            <Route path="/user/order-details" element={<UserOrderDetailsPage />} />
+          </Route>
         </Route>
-        {/* publicly available routes */}
-        <Route path="/" element={<HomePage />} />
-        <Route path="/product-list" element={<ProductListPage />} />
-        <Route path="/product-details" element={<ProductDetailsPage />} />
-        <Route path="/product-details/:id" element={<ProductDetailsPage />} />
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="*" element="Page does not exist" />
 
-        {/*  <Route path="/" component{HomePage} /> in previous versions of react-router-dom */}
 
-        {/* user protected routes: */}
-        <Route element-={< ProtectedRoutesComponent admin={false} />}>
-          <Route path="/user" element={<UserProfilePage />} />
-          <Route path="/user/my-orders" element={<UserOrdersPage />} />
-          <Route path="/user/cart-details" element={<UserCartDetailsPage />} />
-          <Route path="/user/order-details" element={<UserOrderDetailsPage />} />
-        </Route>
 
         {/* admin protected routes: */}
         <Route element-={< ProtectedRoutesComponent admin={true} />}>
