@@ -1,14 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
-
 // components:
 import HeaderComponent from "./components/HeaderComponent";
 import FooterComponent from "./components/FooterComponent";
 
 // user components:
-
 import RoutesWithUserChatComponent from "./components/user/RoutesWithUserChatComponent";
-
 
 // publicly available pages:
 import HomePage from "./pages/HomePage";
@@ -52,19 +49,16 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="*" element="Page does not exist" />
-
-          {/*  <Route path="/" component{HomePage} /> in previous versions of react-router-dom */}
-
-          {/* user protected routes: */}
-          <Route element-={< ProtectedRoutesComponent admin={false} />}>
-            <Route path="/user" element={<UserProfilePage />} />
-            <Route path="/user/my-orders" element={<UserOrdersPage />} />
-            <Route path="/user/cart-details" element={<UserCartDetailsPage />} />
-            <Route path="/user/order-details" element={<UserOrderDetailsPage />} />
-          </Route>
         </Route>
+        {/*  <Route path="/" component{HomePage} /> in previous versions of react-router-dom */}
 
-
+        {/* user protected routes: */}
+        <Route element-={< ProtectedRoutesComponent admin={false} />}>
+          <Route path="/user" element={<UserProfilePage />} />
+          <Route path="/user/my-orders" element={<UserOrdersPage />} />
+          <Route path="/user/cart-details" element={<UserCartDetailsPage />} />
+          <Route path="/user/order-details" element={<UserOrderDetailsPage />} />
+        </Route>
 
         {/* admin protected routes: */}
         <Route element-={< ProtectedRoutesComponent admin={true} />}>
