@@ -1,4 +1,4 @@
-import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav, Container, NavDropdown, Badge, Form, DropdownButton, Dropdown, Button, InputGroup } from "react-bootstrap";
 
 const HeaderComponent = () => {
 
@@ -9,8 +9,24 @@ const HeaderComponent = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
+                        <InputGroup>
+                            <DropdownButton id="dropdown-basic-button" title="Dropdown button">
+                                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                            </DropdownButton>
+                            <Form.Control type="text" placeholder="Normal text" />
+                            <Button variant="warning">Warning</Button>
+                        </InputGroup>
+                    </Nav>
+                    <Nav>
                         <Nav.Link href="#features">Features</Nav.Link>
                         <Nav.Link href="#pricing">Pricing</Nav.Link>
+                        <Nav.Link href="#pricing">
+                            <Badge pill bg="danger">
+                                2
+                            </Badge>
+                            CART</Nav.Link>
                         <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">
@@ -24,10 +40,6 @@ const HeaderComponent = () => {
                         </NavDropdown>
                     </Nav>
                     <Nav>
-                        <Nav.Link href="#deets">More deets</Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">
-                            Dank memes
-                        </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
