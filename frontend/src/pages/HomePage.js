@@ -1,5 +1,13 @@
-const HomePage = () => {
-    return <p>This is a home page</p>
-}
+import ProductCarouselComponent from "../components/ProductCarouselComponent";
+import CategoryCardComponent from "../components/CategoryCardComponent";
 
-export default HomePage
+const HomePage = () => {
+    return (
+        <>
+            <ProductCarouselComponent />
+            <CategoryCardComponent />
+        </>
+    );
+};
+
+export default HomePage;
