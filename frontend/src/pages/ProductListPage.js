@@ -1,9 +1,9 @@
 // import { useParams } from "react-router-dom"
 import { Row, Col, Container, ListGroup, Button } from "react-bootstrap";
 import ListGroupItem from 'react-bootstrap/esm/ListGroupItem';
-// import PaginationComponent from "../components/PaginationComponent.js";
+import PaginationComponent from "../components/PaginationComponent.js";
 import SortOptionsComponent from "../components/SortOptionsComponent.js";
-// import ProductForListComponent from "../components/ProductForListComponent.js";
+import ProductForListComponent from "../components/ProductForListComponent.js";
 import PriceFilterComponent from "../components/filterQueryResultOptions/PriceFilterComponent.js";
 import RatingFilterComponent from "../components/filterQueryResultOptions/RatingFilterComponent.js";
 import CategoryFilterComponent from "../components/filterQueryResultOptions/CategoryFilterComponent.js";
@@ -29,8 +29,8 @@ const ProductListPage = () => {
                     </ListGroup>
                 </Col>
                 <Col md={9}>
-                    {/* <ProductForListComponent /> */}
-                    {/* <PaginationComponent /> */}
+                    {<ProductForListComponent />}
+                    {<PaginationComponent />}
                 </Col>
             </Row>
         </Container>
