@@ -6,8 +6,8 @@ import SortOptionsComponent from "../components/SortOptionsComponent.js";
 // import ProductForListComponent from "../components/ProductForListComponent.js";
 import PriceFilterComponent from "../components/filterQueryResultOptions/PriceFilterComponent.js";
 import RatingFilterComponent from "../components/filterQueryResultOptions/RatingFilterComponent.js";
-// import CategoryFilterComponent from "../components/filterQueryResultOptions/CategoryFilterComponent.js";
-// import AttributesFilterComponent from "../components/filterQueryResultOptions/AttributesFilterComponent.js";
+import CategoryFilterComponent from "../components/filterQueryResultOptions/CategoryFilterComponent.js";
+import AttributesFilterComponent from "../components/filterQueryResultOptions/AttributesFilterComponent.js";
 
 const ProductListPage = () => {
     //     const { id } = useParams();
@@ -20,8 +20,8 @@ const ProductListPage = () => {
                         <ListGroup.Item>{<SortOptionsComponent />}</ListGroup.Item>
                         <ListGroup.Item>{<PriceFilterComponent />}</ListGroup.Item>
                         <ListGroup.Item>{<RatingFilterComponent />}</ListGroup.Item>
-                        <ListGroup.Item>{/* <CategoryFilterComponent /> */}</ListGroup.Item>
-                        <ListGroup.Item>{/* <AttributesFilterComponent /> */}</ListGroup.Item>
+                        <ListGroup.Item>{<CategoryFilterComponent />}</ListGroup.Item>
+                        <ListGroup.Item>{<AttributesFilterComponent />}</ListGroup.Item>
                         <ListGroupItem>
                             <Button variant="primary">Primary</Button>
                             <Button variant="danger">Danger</Button>
