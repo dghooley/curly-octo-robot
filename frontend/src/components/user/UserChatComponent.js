@@ -1,3 +1,4 @@
+import React from "react";
 import "../../chats.css"
 const UserChatComponent = () => {
     return (

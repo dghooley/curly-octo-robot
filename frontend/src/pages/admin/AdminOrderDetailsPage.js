@@ -1,3 +1,4 @@
+import React from "react";
 const AdminOrderDetailsPage = () => {
     return <p>This is an order details page</p>
 }

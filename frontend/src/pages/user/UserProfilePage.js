@@ -1,3 +1,4 @@
+import React from "react";
 const UserProfilePage = () => {
     return <p>This is a user profile page</p>;
 }

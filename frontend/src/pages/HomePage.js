@@ -1,3 +1,4 @@
+import React from "react";
 import ProductCarouselComponent from "../components/ProductCarouselComponent";
 import CategoryCardComponent from "../components/CategoryCardComponent";
 import { Row } from "react-bootstrap";
