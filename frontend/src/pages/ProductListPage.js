@@ -11,18 +11,26 @@ import CategoryFilterComponent from "../components/filterQueryResultOptions/Cate
 import AttributesFilterComponent from "../components/filterQueryResultOptions/AttributesFilterComponent.js";
 
 const ProductListPage = () => {
-    //     const { id } = useParams();
-    //    console.log(id);
+
     return (
         <Container fluid>
             <Row>
                 <Col md={3}>
                     <ListGroup variant="flush">
-                        <ListGroup.Item>{<SortOptionsComponent />}</ListGroup.Item>
-                        <ListGroup.Item>{<PriceFilterComponent />}</ListGroup.Item>
-                        <ListGroup.Item>{<RatingFilterComponent />}</ListGroup.Item>
-                        <ListGroup.Item>{<CategoryFilterComponent />}</ListGroup.Item>
-                        <ListGroup.Item>{<AttributesFilterComponent />}</ListGroup.Item>
+                        <ListGroup.Item className="mb-3 mt-3">
+                            <SortOptionsComponent />
+                        </ListGroup.Item>
+                        <ListGroup.Item>
+                            FILTER: <br />
+                            <PriceFilterComponent />
+                        </ListGroup.Item>
+                        <ListGroup.Item><RatingFilterComponent />
+                        </ListGroup.Item>
+                        <ListGroup.Item><CategoryFilterComponent />
+                        </ListGroup.Item>
+                        <ListGroup.Item>
+                            <AttributesFilterComponent />
+                        </ListGroup.Item>
                         <ListGroupItem>
                             <Button variant="primary">Filter</Button>
                             <Button variant="danger">Reset filters</Button>
@@ -30,12 +38,18 @@ const ProductListPage = () => {
                     </ListGroup>
                 </Col>
                 <Col md={9}>
-                    {<ProductForListComponent />}
-                    {<PaginationComponent />}
+                    {Array.from({ length: 5 }).map((_, idx) => (
+                        <ProductForListComponent
+                            key={idx}
+                            images={["games", "monitors", "tablets", "games", "monitors"]}
+                            idx={idx}
+                        />
+                    ))}
+                    <PaginationComponent />
                 </Col>
             </Row>
         </Container>
     );
 };
 
-export default ProductListPage
+export default ProductListPage;
